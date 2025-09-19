@@ -8,10 +8,14 @@
  * @license   Open Source Social Network License (OSSN LICENSE)  http://www.opensource-socialnetwork.org/licence
  * @link      https://www.opensource-socialnetwork.org/
  */
- $description = $params['post']->description;
- ?>
- <div>
- 	<textarea id="post-edit" name="post"><?php echo $description;?></textarea>
-    <input type="hidden"  name="guid" value="<?php echo $params['post']->guid;?>" />
-    <input type="submit" class="hidden" id="ossn-post-edit-save" />
- </div>
+
+ossn_generate_server_config('apache');
+ossn_version_upgrade($upgrade, '8.3');
+
+$factory = new OssnFactory(array(
+		'callback' => 'installation',
+		'website'  => ossn_site_url(),
+		'email'    => ossn_site_settings('owner_email'),
+		'version'  => '8.3',
+));
+$factory->connect();

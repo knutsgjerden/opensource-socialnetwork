@@ -1,3 +1,23 @@
+OSSN - OPEN SOURCE SOCIAL NETWORK v8.6
+- [B] OssnAds image not showing #2471
+- [E] Make time_updated = time_created by default not 0 #2472
+- [E] Add styling to license page on installation #2473
+- [E] Update old if time_updated=0 to time_created #2472
+- [B] comment edit is not working #2474
+- [E] Check ossn_restore_new_lines for valid string as strlen didn't accept other values #2475
+
+OSSN - OPEN SOURCE SOCIAL NETWORK v8.5
+- [B] time_updated not showing in results #2470
+- [B] Wall is causing time_update=0 for objects #2469
+
+OSSN - OPEN SOURCE SOCIAL NETWORK v8.4
+- [E] Change DB engine to InnoDB #2468
+- [B] Installation fails for OSSN 8.3 #2467
+
+OSSN - OPEN SOURCE SOCIAL NETWORK v8.3
+- [B] php 8.4 deprecation notices #2465
+- [B] PostBackground not working #2466
+
 OSSN - OPEN SOURCE SOCIAL NETWORK v8.2
 - [E] loading spinner when uploading to album #2458
 - [B] Notification is not getting marked viewed #2439
@@ -12,7 +32,22 @@ OSSN - OPEN SOURCE SOCIAL NETWORK v8.2
 - [B] Tinymce missing si and farsi langauge #2431
 - [E] Update phpmailer to 6.10
 - [E] If account is activated and user visited activation page show activation message #2432
- 
+- [E] Allow tagging in group for group members only #2436
+- [B] OssnNotifications component removed and when user is deleted cause error #2459
+- [E] Friends widget on profile page . Friends should be in center #2445
+- [B] Fix indexes in database (uses MyISAM) #2455
+- [E] Add time_updated to tables that allows update like user, object etc #2454
+- [E] Allow to complete remove all notifications or single #2446
+- [E] Remove multiple new lines in post and multiple spaces to single #2461
+- [E] Normalize Wall Remove JSON #2460
+- [E] Remove multiple new lines from comments and multiple spaces to single #2462
+- [E] Reactions instead of "like" #2453
+- [E] Normalize Wall Remove JSON #2460
+- [E] Remove multiple new lines from comments and multiple spaces to single #2462
+- [E] Some CLI based commands for user and site #2464
+- [E] Allow upgrade process using CLI #2463
+- [E] OssnUser->authenticate() method to verify user logins only (not logging into system)
+
 
 OSSN - OPEN SOURCE SOCIAL NETWORK v8.1
 - [B] Owner can not able to delete comment of others in photo #2428
