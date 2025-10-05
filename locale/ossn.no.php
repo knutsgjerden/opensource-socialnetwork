@@ -39,7 +39,7 @@ $en = array(
     'year' => 'År',
     'male' => 'Maskulin',
     'female' => 'Feminin',
-    'account:create:notice' => 'Ved å klikke for å lage en konto er du enige i',
+    'account:create:notice' => 'Ved å klikke for å lage en konto er du enig i',
     'gender' => 'Kjønn',
     
     'account:settings' => 'Kontoinnstillinger',
