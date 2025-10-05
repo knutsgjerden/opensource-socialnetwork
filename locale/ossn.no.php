@@ -11,7 +11,7 @@
  * @link      https://www.opensource-socialnetwork.org/
  */
 
-$en = array(
+$no = array(
     'home' => 'Hjem',
     'site:index' => 'Velkommen',
     'news:feed' => 'Nyhetsstrøm',
