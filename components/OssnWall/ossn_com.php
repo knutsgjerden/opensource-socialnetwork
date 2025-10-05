@@ -91,6 +91,11 @@ function ossn_wall() {
 						'text'  => '<i class="fa fa-image"></i>',
 				),
 		);
+		ossn_register_menu_item('wall/container/controls/group', array(
+				'name'  => 'tag_friend',
+				'class' => 'ossn-wall-friend',
+				'text'  => '<i class="fa fa-users"></i>',
+		));
 		ossn_register_menu_item('wall/container/home', $menupost);
 		ossn_register_menu_item('wall/container/group', $menupost);
 		ossn_register_menu_item('wall/container/user', $menupost);
@@ -103,6 +108,19 @@ function ossn_wall() {
 				}
 		}
 		ossn_add_hook('required', 'components', 'ossn_location_asure_requirements');
+}
+/**
+ * ossn get wall by guid
+ *
+ * @param integer $guid Wall post guid
+ * @return object|boolean
+ */
+function ossn_wall_by_guid($guid) {
+		if(!isset($guid) || (isset($guid) && empty($guid))) {
+				return false;
+		}
+		$wall = new OssnWall();
+		return $wall->GetPost($guid);
 }
 /**
  * Redirect URI for wall like or comment like
@@ -148,8 +166,38 @@ function ossn_friend_picker() {
 						'wheres' => "(CONCAT(u.first_name,  ' ', u.last_name) LIKE '%{$search_for}%')",
 				);
 		}
+		$picker_type = input('picker_type');
+		$group_guid  = input('guid');
+
 		//[E] Enhance friends picker because now getFriends searched via OssnUser instance #2202
-		$friends = $user->getFriends(ossn_loggedin_user()->guid, $options);
+		if(empty($picker_type) || (isset($picker_type) && $picker_type != 'group')) {
+				$friends = $user->getFriends(ossn_loggedin_user()->guid, $options);
+		} elseif(isset($picker_type) && $picker_type == 'group' && com_is_active('OssnGroups')) {
+				$group  = ossn_get_group_by_guid($group_guid);
+				$member = false;
+				if($group) {
+						$member = $group->isMember($group->guid, ossn_loggedin_user()->guid);
+				}
+				if($group->owner_guid == ossn_loggedin_user()->guid) {
+						$member = true;
+				}
+				if(empty($search_for) || !$group || ($group && !$member)) {
+						echo json_encode(array());
+						return false;
+				}
+				$loggedin_guid = ossn_loggedin_user()->guid;
+
+				$user    = new OssnUser();
+				$friends = $user->searchUsers(array(
+						'joins'    => array(
+								'JOIN ossn_relationships AS r ON r.relation_to = u.guid AND r.type = "group:join:approve"',
+						),
+						'wheres'   => array(
+								"(r.relation_from = '{$group_guid}') AND (CONCAT(u.first_name,  ' ', u.last_name) LIKE '%{$search_for}%') AND u.guid != '{$loggedin_guid}'", //replace with group ID,
+						),
+						'distinct' => true,
+				));
+		}
 		if(!$friends) {
 				echo json_encode(array());
 				return false;
@@ -517,7 +565,7 @@ function ossn_get_homepage_wall_access() {
 		}
 }
 /**
- * Convert wallobject to wall post item
+ * Convert wallobject to wall post array
  *
  * @param object $post A wall object
  *
@@ -525,19 +573,19 @@ function ossn_get_homepage_wall_access() {
  */
 function ossn_wallpost_to_item($post) {
 		if($post && $post instanceof OssnWall) {
-				if(!isset($post->poster_guid)) {
-						$post = ossn_get_object($post->guid);
-				}
-				$data = json_decode($post->description);
+				//post text
 				$text = '';
-				if($data) {
-						$text = ossn_restore_new_lines($data->post, true);
+				if(!empty($post->description)) {
+						$text = ossn_restore_new_lines($post->description, true);
 				}
-				$location = '';
 
-				if(isset($data->location)) {
-						$location = '- ' . $data->location;
+				//location
+				$location = '';
+				if(isset($post->location)) {
+						$location = '- ' . $post->location;
 				}
+
+				//image
 				if(isset($post->{'file:wallphoto'})) {
 						$image = $post->getPhotoURL();
 				} else {
@@ -545,15 +593,16 @@ function ossn_wallpost_to_item($post) {
 				}
 
 				$user = ossn_user_by_guid($post->poster_guid);
-				if(!isset($data->friend)) {
-						if(!$data) {
-								$data = new stdClass();
-						}
-						$data->friend = '';
+
+				//friends
+				$friends = '';
+				if(isset($post->tag_friend_guids)) {
+						$friends = $post->tag_friend_guids;
 				}
+
 				return array(
 						'post'     => $post,
-						'friends'  => explode(',', $data->friend),
+						'friends'  => explode(',', $friends),
 						'text'     => $text,
 						'location' => $location,
 						'user'     => $user,
