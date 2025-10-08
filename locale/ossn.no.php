@@ -492,4 +492,5 @@ Vennligst trykk på lenken under for å tilbakestille passordet ditt, eller kopi
     "zh" => "Chinese",
     "zu" => "Zulu"
 );
+
 ossn_register_languages('no', $no);
