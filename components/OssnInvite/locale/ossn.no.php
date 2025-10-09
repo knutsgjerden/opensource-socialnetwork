@@ -12,37 +12,37 @@
  */
 
 $no = array(
-	'com:ossn:invite' => 'Invite',			
-	'com:ossn:invite:friends' => 'Invite Friends',
-	'com:ossn:invite:friends:note' => 'To invite friends to join you on this network, enter their email addresses and a brief message. They will receive an email containing your invitation.',
-	'com:ossn:invite:emails:note' => 'Email addresses (separated by a comma)',
-	'com:ossn:invite:emails:placeholder' => 'smith@example.com, john@example.com',
-	'com:ossn:invite:message' => 'Message',
+	'com:ossn:invite' => 'Inviter',			
+	'com:ossn:invite:friends' => 'Inviter venner',
+	'com:ossn:invite:friends:note' => 'For å invitere venner til denne plattformen, skriv inn epostadressene deres og en kort beskjed. De blir sendt en epost med invitasjonen din.',
+	'com:ossn:invite:emails:note' => 'Epostadresser (adskilt med komma)',
+	'com:ossn:invite:emails:placeholder' => 'navn.navnesen@example.com, navneti.navn@example.com',
+	'com:ossn:invite:message' => 'Melding',
 		
-    	'com:ossn:invite:mail:subject' => 'Invitation to join %s',	
-    	'com:ossn:invite:mail:message' => 'You have been invited to join %s by %s. They included the following message:
+    	'com:ossn:invite:mail:subject' => 'Invitasjon til å bli med i %s',	
+    	'com:ossn:invite:mail:message' => 'Du har blitt invitert til %s av %s. De inkluderte følgende melding:
 
 %s
 
-To join, click the following link:
+For å bli med, klikk på følgende lenke:
 
 %s
 
-Profile link: %s
+Lenke til profil: %s
 ',	
-	'com:ossn:invite:mail:message:default' => 'Hi,
+	'com:ossn:invite:mail:message:default' => 'Hei,
 
-I wanted to invite you to join my network here on %s.
+Jeg vil gjerne invitere deg til å bli med i nettverket mitt her på %s.
 
-Profile link : %s
+Lenke til profil: %s
 
-Best regards.
+Vennlig hilsen,
 %s',
-	'com:ossn:invite:sent' => 'Your friends were invited. Invites sent: %s.',
-	'com:ossn:invite:wrong:emails' => 'The following addresses are not valid: %s.',
-	'com:ossn:invite:sent:failed' => 'Cannot invite the following addresses: %s.',
-	'com:ossn:invite:already:members' => 'The following addresses are already members: %s',
-	'com:ossn:invite:empty:emails' => 'Please add at least one email address',
+	'com:ossn:invite:sent' => 'Vennene dine ble invitert. Invitasjoner sendt: %s.',
+	'com:ossn:invite:wrong:emails' => 'De følgende adressene er ikke gyldige: %s.',
+	'com:ossn:invite:sent:failed' => 'Kan ikke invitere de følgende adressene: %s.',
+	'com:ossn:invite:already:members' => 'De følgende adressene er allerede medlemmer: %s',
+	'com:ossn:invite:empty:emails' => 'Vennligst legg til minst en epostadresse',
 );
 
 ossn_register_languages('no', $no); 
