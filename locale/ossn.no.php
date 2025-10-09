@@ -173,7 +173,7 @@ Du kan kopiere og lime adressen i en nettleser hvis du ikke får til å følge l
     'email:inuse' => 'Epostadressen finnes allerede i vår database. Vennligst forsøk en annen epostadresse.',
     'email:invalid' => 'Epostadressen er ugyldig. Sørg for at adressen du skrev inn er korrekt.',
     'email:error:matching' => "Epostadressene stemmer ikke overens.",
-    'account:created:email' => "Kontoen din er registrert! Vi ha sendt deg en aktiveringsepost. Hvis du ikke hat mottatt eposten, vennligst sjekk i filter for uønsket epost.",
+    'account:created:email' => "Kontoen din er registrert! Vi har sendt deg en aktiveringsepost. Hvis du ikke har mottatt eposten, vennligst sjekk i filter for uønsket epost.",
     
     'administration' => 'Administrering',
     
