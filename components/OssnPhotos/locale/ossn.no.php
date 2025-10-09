@@ -13,31 +13,31 @@
 
 $no = array(
     'album:name' => 'Album Name',
-    'add:album' => 'Add Album',
-    'photo:select' => 'Select Photo',
-    'no:albums' => 'No Albums',
-    'no:photos' => 'No Photos',
-    'back:to:album' => 'Back to Album',
-    'photo:albums' => 'Photo Albums',
+    'add:album' => 'Legg til album',
+    'photo:select' => 'Velg bilde',
+    'no:albums' => 'Ingen album',
+    'no:photos' => 'Ingen bilder',
+    'back:to:album' => 'Tilbake til album',
+    'photo:albums' => 'Bildealbum',
 	
-    'photo:deleted:success' => 'Photo successfully deleted!',
-    'photo:delete:error' => 'Cannot delete photo! Please try again later.',
+    'photo:deleted:success' => 'Bilde slettet!',
+    'photo:delete:error' => 'Kan ikke slette bilde! Vennligst prøv igjen senere.',
 	
-    'photos' => 'Photos',
-    'back' => 'Back',
-    'add:photos' => 'Add photos',
-    'delete:photo' => 'Delete photo',
+    'photos' => 'Bilder',
+    'back' => 'Tilbake',
+    'add:photos' => 'Legg til bilder',
+    'delete:photo' => 'Slett bilde',
 	
-    'covers' => 'Covers',
-    'cover:view' => 'Cover View',
-    'profile:covers' => 'Profile Covers',
-	'delete:album' => 'Delete Album',
+    'covers' => 'Forsider',
+    'cover:view' => 'Forsidevisning',
+    'profile:covers' => 'Profilforsider',
+	'delete:album' => 'Slett album',
 	
-	'photo:album:deleted' => 'Photo album successfully deleted',
-	'photo:album:delete:error' => 'Can not delete photo album',
+	'photo:album:deleted' => 'Album slettet.',
+	'photo:album:delete:error' => 'Kan ikke slette bildealbum',
 	
-	'ossn:notifications:comments:object:ossn:album' => '%s commented on your photo album %s',
-	'ossn:notifications:like:object:ossn:album' => '%s liked your photo(s) in an album %s',
+	'ossn:notifications:comments:object:ossn:album' => '%s kommenterte på albumet %s',
+	'ossn:notifications:like:object:ossn:album' => '%s likte bilder i album %s',
 );
 
 ossn_register_languages('no', $no); 

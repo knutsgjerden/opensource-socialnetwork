@@ -12,21 +12,21 @@
  */
 
 $no = array(
-		'change:cover' => 'Change Cover',
-		'change:photo' => 'Change Photo',
-		'update:info' => 'Update Info',
-		'message' => 'Message',
-		'save:position' => 'Save Position',
-		'ossn:profile:picture:updated' => 'Changed profile picture.',
-		'ossn:profile:cover:picture:updated' => 'Changed profile cover.',
-		'language' => 'Language',
+		'change:cover' => 'Endre forside',
+		'change:photo' => 'Endre bilde',
+		'update:info' => 'Oppdater informasjon',
+		'message' => 'Melding',
+		'save:position' => 'Lagre plassering',
+		'ossn:profile:picture:updated' => 'Oppdatert profilbilde.',
+		'ossn:profile:cover:picture:updated' => 'Endret forsidebilde.',
+		'language' => 'Språk',
 		
-		'edit:profile' => 'Edit Profile',
-		'reposition:cover' => 'Reposition',
-		'profile:photos' => 'Profile Photos',
+		'edit:profile' => 'Rediger profil',
+		'reposition:cover' => 'Endre plassering',
+		'profile:photos' => 'Profilbilder',
 		
-		'profile:cover:err1' => 'Cover image too small',
-		'profile:cover:err1:detail' => 'The cover picture must be at least %spx x %spx or greater.'
+		'profile:cover:err1' => 'Forsidebildet er for lite',
+		'profile:cover:err1:detail' => 'Forsidebildet må være minst %spx x %spx.'
 );
 
 ossn_register_languages('no', $no);

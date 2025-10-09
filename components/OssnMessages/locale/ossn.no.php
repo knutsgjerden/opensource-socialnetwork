@@ -12,23 +12,23 @@
  */
 
 $no = array(
-    'user:messages' => 'Messages',
-    'inbox' => 'Inbox',
+    'user:messages' => 'Meldinger',
+    'inbox' => 'Innboks',
     'send' => 'Send',
-    'ossn:message:between' => 'Messages %s',
-    'messages' => 'Messages',
-    'message:placeholder' => 'Enter text here',
-    'no:messages' => 'You have no message.',
-	'ossnmessages:deleted' => 'Message was deleted',
+    'ossn:message:between' => 'Meldinger %s',
+    'messages' => 'Meldinger',
+    'message:placeholder' => 'Skriv tekst her',
+    'no:messages' => 'Du har ingen meldinger.',
+	'ossnmessages:deleted' => 'Melding ble slettet',
 	
-	'ossnmessages:delete:all' => 'Remove for everyone',
-	'ossnmessages:delete:all:note' => "You'll permanently remove this message for other member. Other member will be able to see that you've removed a message.",
+	'ossnmessages:delete:all' => 'Fjern for alle',
+	'ossnmessages:delete:all:note' => "Du fjerner permanent denne meldingen for andre medlemmer. Andre vil kunne se at du har fjernet en melding.",
 	
-	'ossnmessages:delete:me' => 'Remove for you',
-	'ossnmessages:delete:me:note' => 'This message will be removed for you. Other member will still be able to see it.',
-	'ossnmessages:replied:you' => 'You: %s',
+	'ossnmessages:delete:me' => 'Fjern for meg',
+	'ossnmessages:delete:me:note' => 'Denne meldingen blir fjernet for deg. Andre vil fortsatt kunne se den.',
+	'ossnmessages:replied:you' => 'Du: %s',
 	
-	'message:fileattachment' => 'File Attachment',
+	'message:fileattachment' => 'Filvedlegg',
 );
 
 ossn_register_languages('no', $no); 
